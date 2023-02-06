@@ -12,5 +12,12 @@
         "honorific": "Mr.",
         "email": "giuseppe.verdi@test.com",
         "isAdmin": false
+    },
+    {
+        "id": "715044d6-8ae5-4dba-a73c-c06cd42c2fa4",
+        "name": "Harry Jones",
+        "honorific": "Mr.",
+        "email": "harry.jones@kering.com",
+        "isAdmin": false
     }
 ]

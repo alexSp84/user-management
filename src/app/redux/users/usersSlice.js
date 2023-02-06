@@ -1,9 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 import { sortBy } from 'lodash';
+import { STORAGE_KEY } from '../../utils/constants';
 
 const initialState = {
-    users: []
+    list: [],
+    search: ''
 };
 
 export const usersSlice = createSlice({
@@ -11,13 +13,15 @@ export const usersSlice = createSlice({
     initialState,
     reducers: {
         setUsers(state, action) {
-            state.users = action.payload;
+            state.list = action.payload;
         },
         deleteUser(state, action) {
-            state.users = state.users.filter((user) => user.id !== action.payload);
+            const newUsers = state.list.filter((user) => user.id !== action.payload);
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(newUsers));
+            state.list = newUsers;
         },
         createUser(state) {
-            state.users = [
+            state.list = [
                 {
                     id: uuidv4(),
                     name: '',
@@ -25,16 +29,20 @@ export const usersSlice = createSlice({
                     email: '',
                     isAdmin: false
                 },
-                ...state.users
+                ...state.list
             ]
         },
         editUser(state, action) {
-            const newUsers = [
+            const newUsers = sortBy([
                 action.payload,
-                ...state.users.filter((user) => user.id !== action.payload.id)
-            ];
+                ...state.list.filter((user) => user.id !== action.payload.id)
+            ], [(user) => user.name]);
 
-            state.users = sortBy(newUsers, [(user) => user.name]);
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(newUsers));
+            state.list = newUsers
+        },
+        setSearch(state, action) {
+            state.search = action.payload;
         }
     },
 });
@@ -45,7 +53,8 @@ export const {
     setUsers,
     deleteUser,
     createUser,
-    editUser
+    editUser,
+    setSearch
 } = actions;
 
 export default reducer;
