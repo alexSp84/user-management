@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Typography } from '@mui/material';
 
-const IconWithLabelStyle = styled('div')(({ theme }) => ({
+const IconWithLabelStyle = styled('div')(({
     display: 'flex',
     alignItems: 'center'
 }));

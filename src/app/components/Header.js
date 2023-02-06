@@ -1,4 +1,5 @@
 import { AppBar, Box, Toolbar, Typography } from '@mui/material';
+import theme from '../theme/theme';
 
 const Header = () => {
 
@@ -6,6 +7,7 @@ const Header = () => {
         <AppBar
             color='secondary'
             position='sticky'
+            sx={{ boxShadow: `0 0.5rem ${theme.palette.primary.main}` }}
         >
             <Box sx={{
                 display: 'flex',

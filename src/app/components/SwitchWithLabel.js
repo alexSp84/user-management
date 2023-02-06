@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Switch, Typography } from '@mui/material';
 
-const SwitchWithLabelStyle = styled('div')(() => ({
+const SwitchWithLabelStyle = styled('div')(({
     display: 'flex',
     alignItems: 'center'
 }));

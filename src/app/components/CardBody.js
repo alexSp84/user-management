@@ -5,14 +5,14 @@ import SwitchWithLabel from './SwitchWithLabel';
 import UserInfoFields from './UserInfoFields';
 import CheckIcon from '@mui/icons-material/Check';
 
-const CardBodyStyle = styled('div')(({ theme }) => ({
+const CardBodyStyle = styled('div')(({
     height: '7rem',
     display: 'flex',
     alignItems: 'flex-start',
     justifyContent: 'space-between'
 }));
 
-const LeftBodyStyle = styled('div')(({ theme }) => ({
+const LeftBodyStyle = styled('div')(({
     display: 'flex',
     flexDirection: 'column',
 }));

@@ -4,7 +4,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import EditIcon from '@mui/icons-material/Edit';
 import styled from '@emotion/styled';
 
-const CardActionsStyle = styled('div')(({ theme }) => ({
+const CardActionsStyle = styled('div')(({
     height: '2rem',
     display: 'flex',
     justifyContent: 'flex-end'

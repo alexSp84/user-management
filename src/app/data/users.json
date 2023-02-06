@@ -3,21 +3,35 @@
         "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
         "name": "John Smith",
         "honorific": "Mr.",
-        "email": "john.smith@test.com",
+        "email": "John.smith@test.com",
         "isAdmin": true
     },
     {
         "id": "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed",
         "name": "Giuseppe Verdi",
         "honorific": "Mr.",
-        "email": "giuseppe.verdi@test.com",
+        "email": "Giuseppe.verdi@test.com",
         "isAdmin": false
     },
     {
         "id": "715044d6-8ae5-4dba-a73c-c06cd42c2fa4",
         "name": "Harry Jones",
         "honorific": "Mr.",
-        "email": "harry.jones@kering.com",
+        "email": "Harry.jones@test.com",
         "isAdmin": false
+    },
+    {
+        "id": "543b6460-5558-471d-bf8f-b18a4f6bf2df",
+        "name": "Mario Rossi",
+        "honorific": "Mr.",
+        "email": "Mario.Rossi@test.com",
+        "isAdmin": true
+    },
+    {
+        "id": "dd8f677e-d9d8-4df1-8e19-c7aacbca36e4",
+        "name": "Giovanna Bianchi",
+        "honorific": "Miss.",
+        "email": "Giovanna.bianchi@test.com",
+        "isAdmin": true
     }
 ]

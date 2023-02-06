@@ -23,6 +23,9 @@ const theme = createTheme({
         subtitle1: {
             fontWeight: 'bold',
         },
+        subtitle2: {
+            fontWeight: '400',
+        },
         fontFamily: [
             '-apple-system',
             'BlinkMacSystemFont',
