@@ -1,6 +1,5 @@
 import { MenuItem, Select, TextField } from "@mui/material";
-
-const honorifics = ["Master", "Mr.", "Miss", "Mrs.", "Ms.", "Mx"];
+import honorifics from "../data/honorifics.json"
 
 const UserInfoFields = ({
     honorific,
@@ -31,7 +30,7 @@ const UserInfoFields = ({
                 <TextField
                     variant="outlined"
                     size="small"
-                    placeholder="name"
+                    placeholder="Name"
                     value={name}
                     onChange={(e) => onChangeName(e.target.value)}
                     sx={{ width: "20rem", marginLeft: "0.5rem" }}
@@ -40,7 +39,7 @@ const UserInfoFields = ({
             {!isAdmin && <TextField
                 variant="outlined"
                 size="small"
-                placeholder="email"
+                placeholder="Email"
                 value={email}
                 onChange={(e) => onChangeEmail(e.target.value)}
                 sx={{ width: "20rem", marginTop: "1rem" }}

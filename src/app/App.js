@@ -1,27 +1,22 @@
 import { Container, Stack } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import UserCard from './components/UserCard';
-
-const users = [
-  {
-    id: '0',
-    name: 'John Smith',
-    honorific: 'Mr.',
-    email: 'john.smith@test.com',
-    isAdmin: true
-  },
-  {
-    id: '2',
-    name: 'Giuseppe Verdi',
-    honorific: 'Mr.',
-    email: 'giuseppe.verdi@test.com',
-    isAdmin: false
-  }
-];
+import usersData from './data/users.json'
+import { setUsers } from './redux/users/usersSlice';
+import { sortBy } from 'lodash';
 
 const App = () => {
+  const dispatch = useDispatch();
+  const users = useSelector((state) => state.users.users);
+
+  useEffect(() => {
+    const sortedUsers = sortBy(usersData, [(user) => user.name]);
+    dispatch(setUsers(sortedUsers));
+  }, []);
+
   return (
     <div>
       <Header />
@@ -33,7 +28,7 @@ const App = () => {
           mb={6}
         >
           <SearchBar />
-          {users.map(user =>
+          {users?.map(user =>
             <UserCard
               key={user.id}
               user={user}

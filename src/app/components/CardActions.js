@@ -11,7 +11,7 @@ const CardActionsStyle = styled('div')(({ theme }) => ({
     justifyContent: "flex-end"
 }));
 
-const CardActions = ({ editable, isAdmin, onEdit }) => {
+const CardActions = ({ editable, isAdmin, onEdit, onDelete }) => {
 
     return (
         <CardActionsStyle>
@@ -30,6 +30,7 @@ const CardActions = ({ editable, isAdmin, onEdit }) => {
                 endIcon={<CloseIcon />}
                 color="secondary"
                 sx={{ textTransform: "uppercase" }}
+                onClick={onDelete}
             >
                 Delete
             </Button>

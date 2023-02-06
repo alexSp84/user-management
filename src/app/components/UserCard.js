@@ -3,11 +3,20 @@ import { Stack } from "@mui/system";
 import CardActions from "./CardActions";
 import CardBody from "./CardBody";
 import CardAvatar from "./CardAvatar"
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { deleteUser, editUser } from "../redux/users/usersSlice";
 
 const UserCard = ({ user }) => {
-    const { name, isAdmin } = user;
+    const dispatch = useDispatch();
+    const { id, name, email, isAdmin } = user;
     const [editable, setEditable] = useState(false);
+
+    useEffect(() => {
+        if (!email) {
+            setEditable(true);
+        }
+    }, []);
 
     return (
         <Card>
@@ -40,6 +49,7 @@ const UserCard = ({ user }) => {
                             editable={editable}
                             isAdmin={isAdmin}
                             onEdit={() => setEditable(state => !state)}
+                            onDelete={() => dispatch(deleteUser(id))}
                         />
                     </Box>
                 </Stack>
