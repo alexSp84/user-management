@@ -20,7 +20,7 @@ const App = () => {
   useEffect(() => {
     if (search)
       setUsersFound(users.filter(
-        (user) => user.email.includes(search))
+        (user) => user.email.toLowerCase().includes(search.toLowerCase()))
       );
     else
       setUsersFound();
