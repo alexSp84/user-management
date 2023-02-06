@@ -1,45 +1,45 @@
-import { Button } from "@mui/material";
+import { Button } from '@mui/material';
 import SaveIcon from '@mui/icons-material/Save';
 import CloseIcon from '@mui/icons-material/Close';
 import EditIcon from '@mui/icons-material/Edit';
-import styled from "@emotion/styled";
-
+import styled from '@emotion/styled';
 
 const CardActionsStyle = styled('div')(({ theme }) => ({
-    height: "2rem",
-    display: "flex",
-    justifyContent: "flex-end"
+    height: '2rem',
+    display: 'flex',
+    justifyContent: 'flex-end'
 }));
 
-const CardActions = ({ editable, isAdmin, onEdit, onDelete }) => {
+const CardActions = ({ editable, onEdit, onDelete, onSave }) => {
 
     return (
         <CardActionsStyle>
             {editable &&
                 <Button
-                    variant="text"
+                    variant='text'
                     endIcon={<SaveIcon />}
-                    color="secondary"
-                    sx={{ textTransform: "uppercase" }}
+                    color='secondary'
+                    sx={{ textTransform: 'uppercase' }}
+                    onClick={onSave}
                 >
                     Save
                 </Button>
             }
             <Button
-                variant="text"
+                variant='text'
                 endIcon={<CloseIcon />}
-                color="secondary"
-                sx={{ textTransform: "uppercase" }}
+                color='secondary'
+                sx={{ textTransform: 'uppercase' }}
                 onClick={onDelete}
             >
                 Delete
             </Button>
             {!editable &&
                 <Button
-                    variant="text"
+                    variant='text'
                     endIcon={<EditIcon />}
-                    color="secondary"
-                    sx={{ textTransform: "uppercase" }}
+                    color='secondary'
+                    sx={{ textTransform: 'uppercase' }}
                     onClick={onEdit}
                 >
                     Edit

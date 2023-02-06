@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 import { sortBy } from 'lodash';
 
@@ -20,21 +20,21 @@ export const usersSlice = createSlice({
             state.users = [
                 {
                     id: uuidv4(),
-                    name: "",
-                    honorific: "Mr.",
-                    email: "",
+                    name: '',
+                    honorific: 'Mr.',
+                    email: '',
                     isAdmin: false
                 },
                 ...state.users
             ]
         },
         editUser(state, action) {
-            const newUsers = sortBy([
+            const newUsers = [
                 action.payload,
-                state.users.filter((user) => user.id !== action.payload.id)
-            ], [(user) => user.name]);
+                ...state.users.filter((user) => user.id !== action.payload.id)
+            ];
 
-            state.users = newUsers;
+            state.users = sortBy(newUsers, [(user) => user.name]);
         }
     },
 });

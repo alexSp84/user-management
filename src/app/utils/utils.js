@@ -1,7 +1,7 @@
-import theme from "../theme/theme";
+import theme from '../theme/theme';
 
 export const stringAvatar = (name) => {
-    let children = "";
+    let children = '';
     if (name) {
         if (name.includes(' ') && name.split(' ')[0][0] && name.split(' ')[1][0])
             children = `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`;
@@ -12,6 +12,6 @@ export const stringAvatar = (name) => {
         sx: {
             bgcolor: theme.palette.info.main,
         },
-        children,
+        children: children.toUpperCase(),
     };
 }

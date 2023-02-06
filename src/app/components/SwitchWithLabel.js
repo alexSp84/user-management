@@ -1,9 +1,9 @@
-import styled from "@emotion/styled";
-import { Switch, Typography } from "@mui/material";
+import styled from '@emotion/styled';
+import { Switch, Typography } from '@mui/material';
 
 const SwitchWithLabelStyle = styled('div')(({ theme }) => ({
-    display: "flex",
-    alignItems: "center"
+    display: 'flex',
+    alignItems: 'center'
 }));
 
 const SwitchWithLabel = ({ isAdmin, onChangeAdmin }) => {
@@ -12,10 +12,10 @@ const SwitchWithLabel = ({ isAdmin, onChangeAdmin }) => {
             <Switch
                 checked={isAdmin}
                 onChange={onChangeAdmin}
-                color="secondary"
+                color='secondary'
             />
             <Typography
-                variant={"subtitle1"}
+                variant={'subtitle1'}
                 pl={1}
             >
                 Admin
