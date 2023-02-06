@@ -19,7 +19,7 @@ const UserInfoFields = ({
                     size='small'
                     value={honorific}
                     onChange={(e) => onChangeHonorific(e.target.value)}
-                    sx={{ width: '6rem' }}
+                    sx={{ width: '6rem', backgroundColor: 'common.white' }}
                 >
                     {honorifics.map(h =>
                         <MenuItem key={h} value={h}>
@@ -33,7 +33,11 @@ const UserInfoFields = ({
                     placeholder='Name'
                     value={name}
                     onChange={(e) => onChangeName(e.target.value)}
-                    sx={{ width: '20rem', marginLeft: '0.5rem' }}
+                    sx={{
+                        width: '20rem',
+                        marginLeft: '0.5rem',
+                        backgroundColor: 'common.white'
+                    }}
                 />
             </div>
             {isNew && <TextField
@@ -42,7 +46,11 @@ const UserInfoFields = ({
                 placeholder='Email'
                 value={email}
                 onChange={(e) => onChangeEmail(e.target.value)}
-                sx={{ width: '20rem', marginTop: '1rem' }}
+                sx={{
+                    width: '20rem',
+                    marginTop: '1rem',
+                    backgroundColor: 'common.white'
+                }}
             />}
         </>
     );

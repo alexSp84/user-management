@@ -33,7 +33,7 @@ const UserCard = ({ user }) => {
     }, []);
 
     return (
-        <Card>
+        <Card sx={{ ...editable ? { boxShadow: 'none' } : {} }}>
             <CardContent sx={{
                 padding: '0',
                 ':last-child': { paddingBottom: '0' }
@@ -46,7 +46,12 @@ const UserCard = ({ user }) => {
                         />
                     </Box>
                     <Divider
-                        sx={{ bgcolor: 'secondary.main' }}
+                        sx={{
+                            borderColor: `${editable
+                                ? 'common.white'
+                                : 'secondary.main'}`,
+                            borderWidth: '1px'
+                        }}
                         orientation='vertical'
                         flexItem
                     />

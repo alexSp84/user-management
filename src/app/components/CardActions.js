@@ -11,13 +11,14 @@ const CardActionsStyle = styled('div')(({ theme }) => ({
 }));
 
 const CardActions = ({ editable, onEdit, onDelete, onSave }) => {
+    const iconSx = { ':nth-of-type(1)': { fontSize: '1rem' } };
 
     return (
         <CardActionsStyle>
             {editable &&
                 <Button
                     variant='text'
-                    endIcon={<SaveIcon />}
+                    endIcon={<SaveIcon sx={iconSx} />}
                     color='secondary'
                     sx={{ textTransform: 'uppercase' }}
                     onClick={onSave}
@@ -27,7 +28,7 @@ const CardActions = ({ editable, onEdit, onDelete, onSave }) => {
             }
             <Button
                 variant='text'
-                endIcon={<CloseIcon />}
+                endIcon={<CloseIcon sx={iconSx} />}
                 color='secondary'
                 sx={{ textTransform: 'uppercase' }}
                 onClick={onDelete}
@@ -37,7 +38,7 @@ const CardActions = ({ editable, onEdit, onDelete, onSave }) => {
             {!editable &&
                 <Button
                     variant='text'
-                    endIcon={<EditIcon />}
+                    endIcon={<EditIcon sx={iconSx} />}
                     color='secondary'
                     sx={{ textTransform: 'uppercase' }}
                     onClick={onEdit}
