@@ -21,8 +21,8 @@ const UserCard = ({ user }) => {
             setEditable(false);
             dispatch(editUser({
                 id: user.id,
-                honorific,
                 name,
+                honorific,
                 email,
                 isAdmin
             }));

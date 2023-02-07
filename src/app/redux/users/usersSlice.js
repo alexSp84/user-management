@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
-import { sortBy } from 'lodash';
+import { orderBy } from 'lodash';
 import { STORAGE_KEY } from '../../utils/constants';
 
 const initialState = {
@@ -40,10 +40,10 @@ export const usersSlice = createSlice({
             state.list = newUsers;
         },
         editUser(state, action) {
-            const newUsers = sortBy([
+            const newUsers = orderBy([
                 action.payload,
                 ...state.list.filter((user) => user.id !== action.payload.id)
-            ], [(user) => user.name]);
+            ], [(user) => user.name.toLowerCase()], ['asc']);
 
             localStorage.setItem(STORAGE_KEY, JSON.stringify(newUsers));
             state.list = newUsers;

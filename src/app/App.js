@@ -12,7 +12,7 @@ import {
   setRows,
   setUsers
 } from './redux/users/usersSlice';
-import { sortBy } from 'lodash';
+import { orderBy } from 'lodash';
 import { STORAGE_KEY } from './utils/constants';
 
 const App = () => {
@@ -58,7 +58,7 @@ const App = () => {
   useEffect(() => {
     const storedUsersData = localStorage.getItem(STORAGE_KEY);
     if (!storedUsersData || storedUsersData === '[]') {
-      const sortedUsers = sortBy(usersData, [(user) => user.name]);
+      const sortedUsers = orderBy(usersData, [(user) => user.name.toLowerCase()], ['asc']);
       dispatch(setUsers(sortedUsers));
       localStorage.setItem(STORAGE_KEY, JSON.stringify(sortedUsers));
     } else {
