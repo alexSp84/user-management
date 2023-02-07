@@ -5,7 +5,8 @@ import CardBody from './CardBody';
 import CardAvatar from './CardAvatar'
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { deleteUser, editUser } from '../redux/users/usersSlice';
+import { deleteUser, editUser } from '../../redux/users/usersSlice';
+
 
 const UserCard = ({ user }) => {
     const dispatch = useDispatch();

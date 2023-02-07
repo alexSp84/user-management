@@ -1,5 +1,5 @@
 import { MenuItem, Select, TextField } from '@mui/material';
-import honorifics from '../data/honorifics.json'
+import honorifics from '../../../data/honorifics.json'
 
 const UserInfoFields = ({
     honorific,

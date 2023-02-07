@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Avatar } from '@mui/material';
-import { stringAvatar } from '../utils/utils';
+import { stringAvatar } from '../../utils/utils';
 
 const CardAvatarStyle = styled('div')(({ theme }) => ({
     width: '100%',

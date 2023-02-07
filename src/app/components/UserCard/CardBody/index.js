@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Typography } from '@mui/material';
-import IconWithLabel from './IconWithLabel';
 import SwitchWithLabel from './SwitchWithLabel';
+import IconWithLabel from './IconWithLabel';
 import UserInfoFields from './UserInfoFields';
 import CheckIcon from '@mui/icons-material/Check';
 
