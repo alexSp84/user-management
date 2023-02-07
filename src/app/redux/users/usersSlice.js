@@ -25,7 +25,7 @@ export const usersSlice = createSlice({
             state.list = newUsers;
         },
         createUser(state) {
-            state.list = [
+            const newUsers = [
                 {
                     id: uuidv4(),
                     name: '',
@@ -34,7 +34,10 @@ export const usersSlice = createSlice({
                     isAdmin: false
                 },
                 ...state.list
-            ]
+            ];
+
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(newUsers));
+            state.list = newUsers;
         },
         editUser(state, action) {
             const newUsers = sortBy([

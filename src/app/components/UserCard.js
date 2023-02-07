@@ -16,14 +16,16 @@ const UserCard = ({ user }) => {
     const [editable, setEditable] = useState(false);
 
     const handleSave = () => {
-        setEditable(false);
-        dispatch(editUser({
-            id: user.id,
-            honorific,
-            name,
-            email,
-            isAdmin
-        }));
+        if (email && name) {
+            setEditable(false);
+            dispatch(editUser({
+                id: user.id,
+                honorific,
+                name,
+                email,
+                isAdmin
+            }));
+        }
     };
 
     useEffect(() => {
