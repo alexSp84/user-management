@@ -5,7 +5,11 @@ import { STORAGE_KEY } from '../../utils/constants';
 
 const initialState = {
     list: [],
-    search: ''
+    search: '',
+    found: undefined,
+    paginated: [],
+    page: 0,
+    rows: 10
 };
 
 export const usersSlice = createSlice({
@@ -39,10 +43,22 @@ export const usersSlice = createSlice({
             ], [(user) => user.name]);
 
             localStorage.setItem(STORAGE_KEY, JSON.stringify(newUsers));
-            state.list = newUsers
+            state.list = newUsers;
         },
         setSearch(state, action) {
             state.search = action.payload;
+        },
+        setFound(state, action) {
+            state.found = action.payload;
+        },
+        setPage(state, action) {
+            state.page = action.payload;
+        },
+        setRows(state, action) {
+            state.rows = action.payload;
+        },
+        setPaginated(state, action) {
+            state.paginated = action.payload;
         }
     },
 });
@@ -54,7 +70,11 @@ export const {
     deleteUser,
     createUser,
     editUser,
-    setSearch
+    setSearch,
+    setFound,
+    setPage,
+    setRows,
+    setPaginated
 } = actions;
 
 export default reducer;

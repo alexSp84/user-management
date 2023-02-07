@@ -1,7 +1,7 @@
 import { Box, Button, FormGroup, TextField } from '@mui/material';
 import UserAdd from '@mui/icons-material/PersonAddAlt1';
 import { useDispatch } from 'react-redux';
-import { createUser, setSearch } from '../redux/users/usersSlice';
+import { createUser, setPage, setSearch } from '../redux/users/usersSlice';
 import { useState } from 'react';
 
 const SearchBar = () => {
@@ -11,6 +11,7 @@ const SearchBar = () => {
     const handleAdd = () => {
         setValue('');
         dispatch(setSearch(''));
+        dispatch(setPage(0));
         dispatch(createUser());
     };
 
