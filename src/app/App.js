@@ -56,13 +56,13 @@ const App = () => {
   }, [page, rows, usersFound, users]);
 
   useEffect(() => {
-    const storedUsersData = localStorage.getItem(STORAGE_KEY);
-    if (!storedUsersData || storedUsersData === '[]') {
+    const storedUsersData = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    if (!storedUsersData.length) {
       const sortedUsers = orderBy(usersData, [(user) => user.name.toLowerCase()], ['asc']);
       dispatch(setUsers(sortedUsers));
       localStorage.setItem(STORAGE_KEY, JSON.stringify(sortedUsers));
     } else {
-      dispatch(setUsers(JSON.parse(localStorage.getItem(STORAGE_KEY))));
+      dispatch(setUsers(storedUsersData));
     }
   }, []);
 
