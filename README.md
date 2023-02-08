@@ -1,7 +1,7 @@
 # User management
 
 
-[![Package](https://img.shields.io/github/package-json/v/alexSp84/user-management)](https://img.shields.io/github/package-json/v/alexSp84/user-management) [![License](https://img.shields.io/github/license/alexSp84/user-management)](https://img.shields.io/github/license/alexSp84/user-management) [![Build](https://img.shields.io/badge/build-passing-brightgreen)](https://img.shields.io/badge/build-passing-brightgreen)
+[![Package](https://img.shields.io/github/package-json/v/alexSp84/user-management)](https://img.shields.io/github/package-json/v/alexSp84/user-management) [![License](https://img.shields.io/github/license/alexSp84/user-management?logoColor=MIT)](./LICENSE) [![Build](https://img.shields.io/badge/build-passing-brightgreen)](https://img.shields.io/badge/build-passing-brightgreen)
 
 [![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)](https://reactjs.org/) [![Redux](https://img.shields.io/badge/Redux-593D88?style=flat&logo=redux&logoColor=white)](https://redux.js.org/) [![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white)]( https://user-management-opal.vercel.app/) 
 
