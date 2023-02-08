@@ -2,13 +2,15 @@
 
 
 [![Package](https://img.shields.io/github/package-json/v/alexSp84/user-management)](https://img.shields.io/github/package-json/v/alexSp84/user-management) [![License](https://img.shields.io/github/license/alexSp84/user-management)](https://img.shields.io/github/license/alexSp84/user-management) [![Build](https://img.shields.io/badge/build-passing-brightgreen)](https://img.shields.io/badge/build-passing-brightgreen)
+
 [![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)](https://reactjs.org/) [![Redux](https://img.shields.io/badge/Redux-593D88?style=flat&logo=redux&logoColor=white)](https://redux.js.org/) [![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white)]( https://user-management-opal.vercel.app/) 
 
 
 It's a simple user management Web App.
 
-The application is deployed with Vercel and can be accessed at the link: [User Managment](https://user-management-opal.vercel.app/)
-You can run it on [codesandbox](https://codesandbox.io/p/github/alexSp84/user-management/master?file=%2Fsrc%2Findex.js)
+The application is deployed with Vercel and can be accessed at the link: [User Managment](https://user-management-opal.vercel.app/).
+
+You can run it on [codesandbox](https://codesandbox.io/p/github/alexSp84/user-management/master?file=%2Fsrc%2Findex.js).
 
 ## Features 📚
 - Display a list of users in alphabetical order from a static JSON
