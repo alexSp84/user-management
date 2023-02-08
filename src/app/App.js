@@ -4,16 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import UserCard from './components/UserCard';
-import usersData from './data/users.json'
-import {
-  setFound,
-  setPage,
-  setPaginated,
-  setRows,
-  setUsers
-} from './redux/users/usersSlice';
-import { orderBy } from 'lodash';
-import { STORAGE_KEY } from './utils/constants';
+import { setPage, setRows } from './redux/users/usersSlice';
+import { getPaginatedUsers, getUsers, getUsersByEmail } from './utils/services';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -33,37 +25,15 @@ const App = () => {
     dispatch(setPage(newPage));
 
   useEffect(() => {
-    dispatch(setPage(0));
-    if (search)
-      dispatch(setFound(users.filter(
-        (user) => user.email.toLowerCase().includes(search.toLowerCase()))
-      ));
-    else
-      dispatch(setFound());
+    getUsersByEmail();
   }, [search, users]);
 
   useEffect(() => {
-    let list = [];
-    const userList = usersFound || users;
-    const start = page * rows;
-    const max = start + rows;
-    const last = userList.length < max ? userList.length : max;
-
-    for (let i = start; i < last; i++)
-      list.push(userList[i]);
-
-    dispatch(setPaginated(list));
+    getPaginatedUsers();
   }, [page, rows, usersFound, users]);
 
   useEffect(() => {
-    const storedUsersData = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-    if (!storedUsersData.length) {
-      const sortedUsers = orderBy(usersData, [(user) => user.name.toLowerCase()], ['asc']);
-      dispatch(setUsers(sortedUsers));
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(sortedUsers));
-    } else {
-      dispatch(setUsers(storedUsersData));
-    }
+    getUsers();
   }, []);
 
   return (
